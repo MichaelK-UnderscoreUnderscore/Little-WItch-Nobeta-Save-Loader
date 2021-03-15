@@ -1,0 +1,12 @@
+C:\Users\Erzen\Downloads\lttpr repos\LWNobeta Save Edit\bin\Debug\LWNobeta Save Edit.exe.config
+C:\Users\Erzen\Downloads\lttpr repos\LWNobeta Save Edit\bin\Debug\LWNobeta Save Edit.exe
+C:\Users\Erzen\Downloads\lttpr repos\LWNobeta Save Edit\bin\Debug\LWNobeta Save Edit.pdb
+C:\Users\Erzen\Downloads\lttpr repos\LWNobeta Save Edit\obj\Debug\LWNobeta Save Edit.csprojAssemblyReference.cache
+C:\Users\Erzen\Downloads\lttpr repos\LWNobeta Save Edit\obj\Debug\LWNobeta_Save_Edit.Form1.resources
+C:\Users\Erzen\Downloads\lttpr repos\LWNobeta Save Edit\obj\Debug\LWNobeta_Save_Edit.Properties.Resources.resources
+C:\Users\Erzen\Downloads\lttpr repos\LWNobeta Save Edit\obj\Debug\LWNobeta Save Edit.csproj.GenerateResource.cache
+C:\Users\Erzen\Downloads\lttpr repos\LWNobeta Save Edit\obj\Debug\LWNobeta Save Edit.csproj.CoreCompileInputs.cache
+C:\Users\Erzen\Downloads\lttpr repos\LWNobeta Save Edit\obj\Debug\LWNobeta Save Edit.exe
+C:\Users\Erzen\Downloads\lttpr repos\LWNobeta Save Edit\obj\Debug\LWNobeta Save Edit.pdb
+C:\Users\Erzen\Downloads\lttpr repos\LWNobeta Save Edit\obj\Debug\LWNobeta_Save_Edit.Form2.resources
+C:\Users\Erzen\Downloads\lttpr repos\LWNobeta Save Edit\obj\Debug\LWNobeta_Save_Edit.Form3.resources
