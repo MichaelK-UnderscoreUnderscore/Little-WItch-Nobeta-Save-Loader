@@ -16,5 +16,17 @@ namespace LWNobeta_Save_Edit
         {
             InitializeComponent();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.linkLabel1.LinkVisited = true;
+            System.Diagnostics.Process.Start("https://github.com/MichaelK-UnderscoreUnderscore/Little-WItch-Nobeta-Save-Editor");
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.linkLabel2.LinkVisited = true;
+            System.Diagnostics.Process.Start("https://twitter.com/_Michael__K_");
+        }
     }
 }
