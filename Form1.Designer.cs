@@ -167,14 +167,20 @@
             0,
             0,
             0});
+            this.numHP.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numHP.Name = "numHP";
-            this.numHP.Size = new System.Drawing.Size(42, 20);
+            this.numHP.Size = new System.Drawing.Size(87, 20);
             this.numHP.TabIndex = 7;
             this.numHP.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.numHP.ValueChanged += new System.EventHandler(this.numHP_ValueChanged);
             // 
             // numMP
             // 
@@ -185,7 +191,7 @@
             0,
             0});
             this.numMP.Name = "numMP";
-            this.numMP.Size = new System.Drawing.Size(42, 20);
+            this.numMP.Size = new System.Drawing.Size(87, 20);
             this.numMP.TabIndex = 8;
             this.numMP.Value = new decimal(new int[] {
             1,
@@ -202,7 +208,7 @@
             0,
             0});
             this.numSTA.Name = "numSTA";
-            this.numSTA.Size = new System.Drawing.Size(42, 20);
+            this.numSTA.Size = new System.Drawing.Size(87, 20);
             this.numSTA.TabIndex = 9;
             this.numSTA.Value = new decimal(new int[] {
             1,
@@ -219,7 +225,7 @@
             0,
             0});
             this.numSTR.Name = "numSTR";
-            this.numSTR.Size = new System.Drawing.Size(42, 20);
+            this.numSTR.Size = new System.Drawing.Size(87, 20);
             this.numSTR.TabIndex = 10;
             this.numSTR.Value = new decimal(new int[] {
             1,
@@ -236,7 +242,7 @@
             0,
             0});
             this.numINT.Name = "numINT";
-            this.numINT.Size = new System.Drawing.Size(42, 20);
+            this.numINT.Size = new System.Drawing.Size(87, 20);
             this.numINT.TabIndex = 11;
             this.numINT.Value = new decimal(new int[] {
             1,
@@ -253,7 +259,7 @@
             0,
             0});
             this.numCON.Name = "numCON";
-            this.numCON.Size = new System.Drawing.Size(42, 20);
+            this.numCON.Size = new System.Drawing.Size(87, 20);
             this.numCON.TabIndex = 12;
             this.numCON.Value = new decimal(new int[] {
             1,
@@ -264,7 +270,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(278, 14);
+            this.label7.Location = new System.Drawing.Point(321, 13);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 13;
@@ -272,7 +278,7 @@
             // 
             // numSave
             // 
-            this.numSave.Location = new System.Drawing.Point(345, 12);
+            this.numSave.Location = new System.Drawing.Point(388, 11);
             this.numSave.Maximum = new decimal(new int[] {
             9,
             0,
@@ -295,7 +301,7 @@
             // 
             // buttonLoad
             // 
-            this.buttonLoad.Location = new System.Drawing.Point(281, 38);
+            this.buttonLoad.Location = new System.Drawing.Point(324, 37);
             this.buttonLoad.Name = "buttonLoad";
             this.buttonLoad.Size = new System.Drawing.Size(106, 23);
             this.buttonLoad.TabIndex = 15;
@@ -305,7 +311,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(281, 67);
+            this.buttonSave.Location = new System.Drawing.Point(324, 66);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(106, 23);
             this.buttonSave.TabIndex = 16;
@@ -318,7 +324,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Maroon;
-            this.label8.Location = new System.Drawing.Point(278, 115);
+            this.label8.Location = new System.Drawing.Point(321, 114);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(157, 28);
             this.label8.TabIndex = 17;
@@ -496,7 +502,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Maroon;
-            this.label15.Location = new System.Drawing.Point(278, 93);
+            this.label15.Location = new System.Drawing.Point(321, 92);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(121, 14);
             this.label15.TabIndex = 31;
@@ -505,7 +511,7 @@
             // 
             // buttonHowTo
             // 
-            this.buttonHowTo.Location = new System.Drawing.Point(281, 146);
+            this.buttonHowTo.Location = new System.Drawing.Point(324, 145);
             this.buttonHowTo.Name = "buttonHowTo";
             this.buttonHowTo.Size = new System.Drawing.Size(153, 23);
             this.buttonHowTo.TabIndex = 32;
@@ -559,7 +565,7 @@
             "3 - Door to \"Okun Shrine - Underground Lobby\""});
             this.comboSPAWNPOINT.Location = new System.Drawing.Point(157, 222);
             this.comboSPAWNPOINT.Name = "comboSPAWNPOINT";
-            this.comboSPAWNPOINT.Size = new System.Drawing.Size(274, 21);
+            this.comboSPAWNPOINT.Size = new System.Drawing.Size(319, 21);
             this.comboSPAWNPOINT.TabIndex = 33;
             this.comboSPAWNPOINT.Text = "0 - 地下城 (Underground Castle)";
             this.comboSPAWNPOINT.SelectedIndexChanged += new System.EventHandler(this.comboSPAWNPOINT_SelectedIndexChanged);
@@ -575,7 +581,7 @@
             // 
             // numSPAWN
             // 
-            this.numSPAWN.Location = new System.Drawing.Point(389, 198);
+            this.numSPAWN.Location = new System.Drawing.Point(434, 198);
             this.numSPAWN.Maximum = new decimal(new int[] {
             255,
             0,
@@ -588,7 +594,7 @@
             // 
             // numREGION
             // 
-            this.numREGION.Location = new System.Drawing.Point(295, 198);
+            this.numREGION.Location = new System.Drawing.Point(340, 198);
             this.numREGION.Maximum = new decimal(new int[] {
             255,
             0,
@@ -602,7 +608,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(248, 200);
+            this.label17.Location = new System.Drawing.Point(293, 200);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(41, 13);
             this.label17.TabIndex = 39;
@@ -611,7 +617,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(343, 200);
+            this.label18.Location = new System.Drawing.Point(388, 200);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(40, 13);
             this.label18.TabIndex = 40;
@@ -632,7 +638,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.Maroon;
-            this.label19.Location = new System.Drawing.Point(278, 93);
+            this.label19.Location = new System.Drawing.Point(321, 92);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(155, 14);
             this.label19.TabIndex = 42;
@@ -643,9 +649,9 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(393, 37);
+            this.label20.Location = new System.Drawing.Point(436, 35);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(24, 25);
+            this.label20.Size = new System.Drawing.Size(33, 25);
             this.label20.TabIndex = 43;
             this.label20.Text = "✓";
             this.label20.Visible = false;
@@ -654,9 +660,9 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(393, 66);
+            this.label21.Location = new System.Drawing.Point(436, 64);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(24, 25);
+            this.label21.Size = new System.Drawing.Size(33, 25);
             this.label21.TabIndex = 44;
             this.label21.Text = "✓";
             this.label21.Visible = false;
@@ -696,7 +702,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(446, 249);
+            this.ClientSize = new System.Drawing.Size(485, 249);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.numSouls);
             this.Controls.Add(this.label21);

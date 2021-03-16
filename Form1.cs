@@ -30,7 +30,7 @@ namespace LWNobeta_Save_Edit
             else
             {
                 label8.Visible = true;
-                numChangeMinMax(0, 255);
+                numChangeMinMax(-2147483648, 2147483647);
             }
         }
 
@@ -47,23 +47,31 @@ namespace LWNobeta_Save_Edit
 
                 checkDifficulty.Checked = saveFile[20] == 1;
                 checkSkills.Checked = false;
+
+                int HP = BitConverter.ToInt32(saveFile, 60);
+                int MP = BitConverter.ToInt32(saveFile, 68);
+                int STA = BitConverter.ToInt32(saveFile, 76);
+                int STR = BitConverter.ToInt32(saveFile, 84);
+                int INT = BitConverter.ToInt32(saveFile, 92);
+                int CON = BitConverter.ToInt32(saveFile, 100);
+
                 if (
-                    (saveFile[60] > 30) || (saveFile[68] > 30) ||
-                    (saveFile[76] > 30) || (saveFile[84] > 30) ||
-                    (saveFile[92] > 30) || (saveFile[100] > 30) ||
-                    (saveFile[60] < 1) || (saveFile[68] < 1) ||
-                    (saveFile[76] < 1) || (saveFile[84] < 1) ||
-                    (saveFile[92] < 1) || (saveFile[100] < 1))
+                    (HP > 30) || (MP > 30) ||
+                    (STA > 30) || (STR > 30) ||
+                    (INT > 30) || (CON > 30) ||
+                    (HP < 1) || (MP < 1) ||
+                    (STA < 1) || (STR < 1) ||
+                    (INT < 1) || (CON < 1))
                 {
                     checkSkills.Checked = true;
                 }
 
-                numHP.Value = saveFile[60];
-                numMP.Value = saveFile[68];
-                numSTA.Value = saveFile[76];
-                numSTR.Value = saveFile[84];
-                numINT.Value = saveFile[92];
-                numCON.Value = saveFile[100];
+                numHP.Value = HP;
+                numMP.Value = MP;
+                numSTA.Value = STA;
+                numSTR.Value = STR;
+                numINT.Value = INT;
+                numCON.Value = CON;
 
                 numARC.Value = saveFile[108];
                 numICE.Value = saveFile[112];
@@ -72,8 +80,7 @@ namespace LWNobeta_Save_Edit
                 numWIND.Value = saveFile[52];
                 numCOUNTER.Value = saveFile[56];
 
-                byte[] f = { saveFile[170], saveFile[171], saveFile[172], saveFile[173] };
-                numSouls.Value = (decimal)BitConverter.ToSingle(f, 0);
+                numSouls.Value = (decimal)BitConverter.ToSingle(saveFile, 170);
 
                 label20.Visible = true;
                 timerLoad.Start();
@@ -91,12 +98,12 @@ namespace LWNobeta_Save_Edit
             saveFile[16] = (byte)numSPAWN.Value;
 
             saveFile[20] = checkDifficulty.Checked ? (byte)1 : (byte)0;
-            saveFile[60] = (byte)numHP.Value;
-            saveFile[68] = (byte)numMP.Value;
-            saveFile[76] = (byte)numSTA.Value;
-            saveFile[84] = (byte)numSTR.Value;
-            saveFile[92] = (byte)numINT.Value;
-            saveFile[100] = (byte)numCON.Value;
+            BitConverter.GetBytes((int)numHP.Value).CopyTo(saveFile, 60);
+            BitConverter.GetBytes((int)numMP.Value).CopyTo(saveFile, 68);
+            BitConverter.GetBytes((int)numSTA.Value).CopyTo(saveFile, 76);
+            BitConverter.GetBytes((int)numSTR.Value).CopyTo(saveFile, 84);
+            BitConverter.GetBytes((int)numINT.Value).CopyTo(saveFile, 92);
+            BitConverter.GetBytes((int)numCON.Value).CopyTo(saveFile, 100);
 
             saveFile[108] = (byte)numARC.Value;
             saveFile[112] = (byte)numICE.Value;
@@ -105,11 +112,7 @@ namespace LWNobeta_Save_Edit
             saveFile[52]  = (byte)numWIND.Value;
             saveFile[56]  = (byte)numCOUNTER.Value;
 
-            byte[] b = BitConverter.GetBytes((float)numSouls.Value);
-            saveFile[170] = b[0];
-            saveFile[171] = b[1];
-            saveFile[172] = b[2];
-            saveFile[173] = b[3];
+            BitConverter.GetBytes((float)numSouls.Value).CopyTo(saveFile, 170);
 
             File.WriteAllBytes("LittleWitchNobeta_Data/Save/Save0" + saveSlot.ToString() + ".dat", saveFile);
             label21.Visible = true;
@@ -384,6 +387,11 @@ namespace LWNobeta_Save_Edit
         {
             timerSave.Stop();
             label21.Visible = false;
+        }
+
+        private void numHP_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
