@@ -123,4 +123,19 @@
   <metadata name="timerSave.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>104, 17</value>
   </metadata>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>382, 15</value>
+  </metadata>
+  <data name="checkHotSave.ToolTip" xml:space="preserve">
+    <value>With Hot Save enabled, when clicking on "Save Data", the Program will look for the next time the file is saved over,
+this happens e.g. when the game starts a loading screen.
+
+In the middle of a loading screen (Somewhere around 90%) the game reloads a Save File, allowing you to Hot Load an edited Save File.</value>
+  </data>
+  <metadata name="fswSave.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>306, 17</value>
+  </metadata>
+  <metadata name="timerWait.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>196, 18</value>
+  </metadata>
 </root>

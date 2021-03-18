@@ -10,3 +10,15 @@ C:\Users\Erzen\Downloads\lttpr repos\LWNobeta Save Edit\obj\Debug\LWNobeta Save 
 C:\Users\Erzen\Downloads\lttpr repos\LWNobeta Save Edit\obj\Debug\LWNobeta Save Edit.pdb
 C:\Users\Erzen\Downloads\lttpr repos\LWNobeta Save Edit\obj\Debug\LWNobeta_Save_Edit.Form2.resources
 C:\Users\Erzen\Downloads\lttpr repos\LWNobeta Save Edit\obj\Debug\LWNobeta_Save_Edit.Form3.resources
+C:\Users\MichaelK\Documents\GitHub\Little-WItch-Nobeta-Save-Editor\bin\Debug\LWNobeta Save Edit.exe.config
+C:\Users\MichaelK\Documents\GitHub\Little-WItch-Nobeta-Save-Editor\bin\Debug\LWNobeta Save Edit.exe
+C:\Users\MichaelK\Documents\GitHub\Little-WItch-Nobeta-Save-Editor\bin\Debug\LWNobeta Save Edit.pdb
+C:\Users\MichaelK\Documents\GitHub\Little-WItch-Nobeta-Save-Editor\obj\Debug\LWNobeta Save Edit.csprojAssemblyReference.cache
+C:\Users\MichaelK\Documents\GitHub\Little-WItch-Nobeta-Save-Editor\obj\Debug\LWNobeta_Save_Edit.Form1.resources
+C:\Users\MichaelK\Documents\GitHub\Little-WItch-Nobeta-Save-Editor\obj\Debug\LWNobeta_Save_Edit.Form2.resources
+C:\Users\MichaelK\Documents\GitHub\Little-WItch-Nobeta-Save-Editor\obj\Debug\LWNobeta_Save_Edit.Form3.resources
+C:\Users\MichaelK\Documents\GitHub\Little-WItch-Nobeta-Save-Editor\obj\Debug\LWNobeta_Save_Edit.Properties.Resources.resources
+C:\Users\MichaelK\Documents\GitHub\Little-WItch-Nobeta-Save-Editor\obj\Debug\LWNobeta Save Edit.csproj.GenerateResource.cache
+C:\Users\MichaelK\Documents\GitHub\Little-WItch-Nobeta-Save-Editor\obj\Debug\LWNobeta Save Edit.csproj.CoreCompileInputs.cache
+C:\Users\MichaelK\Documents\GitHub\Little-WItch-Nobeta-Save-Editor\obj\Debug\LWNobeta Save Edit.exe
+C:\Users\MichaelK\Documents\GitHub\Little-WItch-Nobeta-Save-Editor\obj\Debug\LWNobeta Save Edit.pdb

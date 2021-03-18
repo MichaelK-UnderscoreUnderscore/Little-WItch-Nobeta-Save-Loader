@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.checkSkills = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,7 +47,7 @@
             this.numSave = new System.Windows.Forms.NumericUpDown();
             this.buttonLoad = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelErrSkillsOoR = new System.Windows.Forms.Label();
             this.checkDifficulty = new System.Windows.Forms.CheckBox();
             this.numCOUNTER = new System.Windows.Forms.NumericUpDown();
             this.numWIND = new System.Windows.Forms.NumericUpDown();
@@ -60,7 +61,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.labelErrSaveFileNotExist = new System.Windows.Forms.Label();
             this.buttonHowTo = new System.Windows.Forms.Button();
             this.comboSPAWNPOINT = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -69,13 +70,18 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.buttonItems = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.labelErrSaveLoaded = new System.Windows.Forms.Label();
+            this.labelLoad = new System.Windows.Forms.Label();
+            this.labelSave = new System.Windows.Forms.Label();
             this.timerLoad = new System.Windows.Forms.Timer(this.components);
             this.timerSave = new System.Windows.Forms.Timer(this.components);
             this.numSouls = new System.Windows.Forms.NumericUpDown();
             this.label22 = new System.Windows.Forms.Label();
+            this.checkHotSave = new System.Windows.Forms.CheckBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.fswSave = new System.IO.FileSystemWatcher();
+            this.timerWait = new System.Windows.Forms.Timer(this.components);
+            this.labelWait = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numHP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSTA)).BeginInit();
@@ -92,6 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numSPAWN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numREGION)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSouls)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fswSave)).BeginInit();
             this.SuspendLayout();
             // 
             // checkSkills
@@ -180,7 +187,6 @@
             0,
             0,
             0});
-            this.numHP.ValueChanged += new System.EventHandler(this.numHP_ValueChanged);
             // 
             // numMP
             // 
@@ -270,7 +276,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(321, 13);
+            this.label7.Location = new System.Drawing.Point(300, 13);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 13;
@@ -278,7 +284,7 @@
             // 
             // numSave
             // 
-            this.numSave.Location = new System.Drawing.Point(388, 11);
+            this.numSave.Location = new System.Drawing.Point(359, 11);
             this.numSave.Maximum = new decimal(new int[] {
             9,
             0,
@@ -319,17 +325,17 @@
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
-            // label8
+            // labelErrSkillsOoR
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Maroon;
-            this.label8.Location = new System.Drawing.Point(321, 114);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(157, 28);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Skill above 30 or below 1 can\r\ncause unintended behaviour";
-            this.label8.Visible = false;
+            this.labelErrSkillsOoR.AutoSize = true;
+            this.labelErrSkillsOoR.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelErrSkillsOoR.ForeColor = System.Drawing.Color.Maroon;
+            this.labelErrSkillsOoR.Location = new System.Drawing.Point(321, 114);
+            this.labelErrSkillsOoR.Name = "labelErrSkillsOoR";
+            this.labelErrSkillsOoR.Size = new System.Drawing.Size(157, 28);
+            this.labelErrSkillsOoR.TabIndex = 17;
+            this.labelErrSkillsOoR.Text = "Skill above 30 or below 1 can\r\ncause unintended behaviour";
+            this.labelErrSkillsOoR.Visible = false;
             // 
             // checkDifficulty
             // 
@@ -497,17 +503,17 @@
             this.label14.TabIndex = 19;
             this.label14.Text = "Arcane";
             // 
-            // label15
+            // labelErrSaveFileNotExist
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Maroon;
-            this.label15.Location = new System.Drawing.Point(321, 92);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(121, 14);
-            this.label15.TabIndex = 31;
-            this.label15.Text = "Save File doesn\'t exist";
-            this.label15.Visible = false;
+            this.labelErrSaveFileNotExist.AutoSize = true;
+            this.labelErrSaveFileNotExist.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelErrSaveFileNotExist.ForeColor = System.Drawing.Color.Maroon;
+            this.labelErrSaveFileNotExist.Location = new System.Drawing.Point(321, 92);
+            this.labelErrSaveFileNotExist.Name = "labelErrSaveFileNotExist";
+            this.labelErrSaveFileNotExist.Size = new System.Drawing.Size(121, 14);
+            this.labelErrSaveFileNotExist.TabIndex = 31;
+            this.labelErrSaveFileNotExist.Text = "Save File doesn\'t exist";
+            this.labelErrSaveFileNotExist.Visible = false;
             // 
             // buttonHowTo
             // 
@@ -633,39 +639,39 @@
             this.buttonItems.UseVisualStyleBackColor = true;
             this.buttonItems.Click += new System.EventHandler(this.buttonItems_Click);
             // 
-            // label19
+            // labelErrSaveLoaded
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Maroon;
-            this.label19.Location = new System.Drawing.Point(321, 92);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(155, 14);
-            this.label19.TabIndex = 42;
-            this.label19.Text = "Save File needs to be loaded";
-            this.label19.Visible = false;
+            this.labelErrSaveLoaded.AutoSize = true;
+            this.labelErrSaveLoaded.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelErrSaveLoaded.ForeColor = System.Drawing.Color.Maroon;
+            this.labelErrSaveLoaded.Location = new System.Drawing.Point(321, 92);
+            this.labelErrSaveLoaded.Name = "labelErrSaveLoaded";
+            this.labelErrSaveLoaded.Size = new System.Drawing.Size(155, 14);
+            this.labelErrSaveLoaded.TabIndex = 42;
+            this.labelErrSaveLoaded.Text = "Save File needs to be loaded";
+            this.labelErrSaveLoaded.Visible = false;
             // 
-            // label20
+            // labelLoad
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(436, 35);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(33, 25);
-            this.label20.TabIndex = 43;
-            this.label20.Text = "✓";
-            this.label20.Visible = false;
+            this.labelLoad.AutoSize = true;
+            this.labelLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLoad.Location = new System.Drawing.Point(436, 35);
+            this.labelLoad.Name = "labelLoad";
+            this.labelLoad.Size = new System.Drawing.Size(33, 25);
+            this.labelLoad.TabIndex = 43;
+            this.labelLoad.Text = "✓";
+            this.labelLoad.Visible = false;
             // 
-            // label21
+            // labelSave
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(436, 64);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(33, 25);
-            this.label21.TabIndex = 44;
-            this.label21.Text = "✓";
-            this.label21.Visible = false;
+            this.labelSave.AutoSize = true;
+            this.labelSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSave.Location = new System.Drawing.Point(436, 64);
+            this.labelSave.Name = "labelSave";
+            this.labelSave.Size = new System.Drawing.Size(33, 25);
+            this.labelSave.TabIndex = 44;
+            this.labelSave.Text = "✓";
+            this.labelSave.Visible = false;
             // 
             // timerLoad
             // 
@@ -698,16 +704,58 @@
             this.label22.TabIndex = 46;
             this.label22.Text = "Souls";
             // 
+            // checkHotSave
+            // 
+            this.checkHotSave.AutoSize = true;
+            this.checkHotSave.Location = new System.Drawing.Point(407, 12);
+            this.checkHotSave.Name = "checkHotSave";
+            this.checkHotSave.Size = new System.Drawing.Size(71, 17);
+            this.checkHotSave.TabIndex = 47;
+            this.checkHotSave.Text = "Hot Save";
+            this.toolTip1.SetToolTip(this.checkHotSave, resources.GetString("checkHotSave.ToolTip"));
+            this.checkHotSave.UseVisualStyleBackColor = true;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 1000000;
+            this.toolTip1.InitialDelay = 500;
+            this.toolTip1.ReshowDelay = 100;
+            // 
+            // fswSave
+            // 
+            this.fswSave.NotifyFilter = System.IO.NotifyFilters.LastWrite;
+            this.fswSave.Path = "LittleWitchNobeta_Data/Save/";
+            this.fswSave.SynchronizingObject = this;
+            this.fswSave.Changed += new System.IO.FileSystemEventHandler(this.fswSave_Changed);
+            // 
+            // timerWait
+            // 
+            this.timerWait.Interval = 1000;
+            this.timerWait.Tick += new System.EventHandler(this.timerWait_Tick);
+            // 
+            // labelWait
+            // 
+            this.labelWait.AutoSize = true;
+            this.labelWait.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWait.Location = new System.Drawing.Point(436, 64);
+            this.labelWait.Name = "labelWait";
+            this.labelWait.Size = new System.Drawing.Size(18, 25);
+            this.labelWait.TabIndex = 48;
+            this.labelWait.Text = ".";
+            this.labelWait.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(485, 249);
+            this.Controls.Add(this.labelWait);
+            this.Controls.Add(this.checkHotSave);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.numSouls);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label19);
+            this.Controls.Add(this.labelSave);
+            this.Controls.Add(this.labelLoad);
+            this.Controls.Add(this.labelErrSaveLoaded);
             this.Controls.Add(this.buttonItems);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
@@ -716,7 +764,7 @@
             this.Controls.Add(this.label16);
             this.Controls.Add(this.comboSPAWNPOINT);
             this.Controls.Add(this.buttonHowTo);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.labelErrSaveFileNotExist);
             this.Controls.Add(this.numCOUNTER);
             this.Controls.Add(this.numWIND);
             this.Controls.Add(this.numLIG);
@@ -730,7 +778,7 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.checkDifficulty);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.labelErrSkillsOoR);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonLoad);
             this.Controls.Add(this.numSave);
@@ -766,6 +814,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numSPAWN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numREGION)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSouls)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fswSave)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -790,7 +839,7 @@
         private System.Windows.Forms.NumericUpDown numSave;
         private System.Windows.Forms.Button buttonLoad;
         private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelErrSkillsOoR;
         private System.Windows.Forms.CheckBox checkDifficulty;
         private System.Windows.Forms.NumericUpDown numCOUNTER;
         private System.Windows.Forms.NumericUpDown numWIND;
@@ -804,7 +853,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label labelErrSaveFileNotExist;
         private System.Windows.Forms.Button buttonHowTo;
         private System.Windows.Forms.ComboBox comboSPAWNPOINT;
         private System.Windows.Forms.Label label16;
@@ -813,13 +862,18 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button buttonItems;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label labelErrSaveLoaded;
+        private System.Windows.Forms.Label labelLoad;
+        private System.Windows.Forms.Label labelSave;
         private System.Windows.Forms.Timer timerLoad;
         private System.Windows.Forms.Timer timerSave;
         private System.Windows.Forms.NumericUpDown numSouls;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.CheckBox checkHotSave;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.IO.FileSystemWatcher fswSave;
+        private System.Windows.Forms.Timer timerWait;
+        private System.Windows.Forms.Label labelWait;
     }
 }
 
