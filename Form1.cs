@@ -242,39 +242,39 @@ namespace LWNobeta_Save_Edit
 
 		private void buttonSave_Click(object sender, EventArgs e)
 		{
-			switch (buttonSave.Text)
-			{
-				case "Cancel":
-					buttonSave.Text = "Save Data";
-					timerWait.Stop();
-					fswSave.EnableRaisingEvents = false;
-					labelWait.Visible = false;
-					labelWait.Text = ".";
-					numSave.Enabled = true;
-					break;
-				default:
-					if (checkHotSave.Checked)
-					{
-						labelErrSaveFileNotExist.Visible = false;
-						try
+			if (saveFile != null)
+				switch (buttonSave.Text)
+				{
+					case "Cancel":
+						buttonSave.Text = "Save Data";
+						timerWait.Stop();
+						fswSave.EnableRaisingEvents = false;
+						labelWait.Visible = false;
+						labelWait.Text = ".";
+						numSave.Enabled = true;
+						break;
+					default:
+						if (checkHotSave.Checked)
 						{
-							fswSave.Filter = "Save0" + numSave.Value.ToString() + ".dat";
-							fswSave.EnableRaisingEvents = true;
-							timerWait.Enabled = true;
-							labelWait.Visible = true;
-							numSave.Enabled = false;
-							buttonSave.Text = "Cancel";
+							labelErrSaveFileNotExist.Visible = false;
+							try
+							{
+								fswSave.Filter = "Save0" + numSave.Value.ToString() + ".dat";
+								fswSave.EnableRaisingEvents = true;
+								timerWait.Enabled = true;
+								labelWait.Visible = true;
+								numSave.Enabled = false;
+								buttonSave.Text = "Cancel";
+							}
+							catch
+							{
+								labelErrSaveFileNotExist.Visible = true;
+							}
+							return;
 						}
-						catch
-						{
-							labelErrSaveFileNotExist.Visible = true;
-						}
-						return;
-					}
-					if (saveFile != null)
 						saveSaveData((int)numSave.Value);
-					break;
-			}
+						break;
+				}
 		}
 
 		private void buttonLoad_Click(object sender, EventArgs e)
@@ -437,6 +437,7 @@ namespace LWNobeta_Save_Edit
 
 		private void fswSave_Changed(object sender, FileSystemEventArgs e)
 		{
+			/*
 			byte[] itemData = new byte[9];
 			itemData[0] = saveFile[130];
 			itemData[1] = saveFile[138];
@@ -459,7 +460,7 @@ namespace LWNobeta_Save_Edit
 			saveFile[158] = itemData[6];
 			saveFile[162] = itemData[7];
 			saveFile[166] = itemData[8];
-
+			*/
 			saveSaveData((int)numSave.Value);
 
 			buttonSave.Text = "Save Data";
