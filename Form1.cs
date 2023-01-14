@@ -38,6 +38,21 @@ namespace LWNobeta_Save_Edit
 			}
 		}
 
+		private void backupSaveData(string saveName)
+        {
+			labelBackupFileName.Text = "None";
+			try
+			{
+				File.WriteAllBytes("LittleWitchNobeta_Data/Save/" + saveName + ".dat",
+										File.ReadAllBytes("LittleWitchNobeta_Data/Save/GameSave0" + numericBackupSaveSlot.Value.ToString() + ".dat"));
+				labelBackupFileName.Text = saveName;
+			}
+			catch
+			{
+				labelBackupFileName.Text = "Failed to backup...";
+			}
+			reloadSaveFolder();
+		}
 		private void reloadSaveFolder()
         {
 			string[] FilePaths = Directory.GetFiles("LittleWitchNobeta_Data/Save/","*.dat");
@@ -57,6 +72,11 @@ namespace LWNobeta_Save_Edit
         private void buttonLoad_Click(object sender, EventArgs e)
         {
 			loadSaveData(listSaveFolder.Text.ToString());
+        }
+
+        private void buttonSaveBackup_Click(object sender, EventArgs e)
+        {
+			backupSaveData(textBoxBackupSaveName.Text);
         }
     }
 }

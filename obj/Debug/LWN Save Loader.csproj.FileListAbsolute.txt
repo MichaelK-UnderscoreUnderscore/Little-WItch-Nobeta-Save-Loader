@@ -1,0 +1,11 @@
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\bin\Debug\LWN Save Loader.exe.config
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\bin\Debug\LWN Save Loader.exe
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\bin\Debug\LWN Save Loader.pdb
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\obj\Debug\LWN Save Loader.csproj.AssemblyReference.cache
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\obj\Debug\LWN Save Loader.csproj.SuggestedBindingRedirects.cache
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\obj\Debug\LWNobeta_Save_Edit.Form1.resources
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\obj\Debug\LWNobeta_Save_Edit.Properties.Resources.resources
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\obj\Debug\LWN Save Loader.csproj.GenerateResource.cache
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\obj\Debug\LWN Save Loader.csproj.CoreCompileInputs.cache
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\obj\Debug\LWN Save Loader.exe
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\obj\Debug\LWN Save Loader.pdb
