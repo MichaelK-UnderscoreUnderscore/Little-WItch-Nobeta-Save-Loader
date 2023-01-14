@@ -22,3 +22,16 @@ C:\Users\MichaelK\Documents\GitHub\Little-WItch-Nobeta-Save-Editor\obj\Release\L
 C:\Users\MichaelK\Documents\GitHub\Little-WItch-Nobeta-Save-Editor\obj\Release\LWNobeta Save Edit.csproj.CoreCompileInputs.cache
 C:\Users\MichaelK\Documents\GitHub\Little-WItch-Nobeta-Save-Editor\obj\Release\LWNobeta Save Edit.exe
 C:\Users\MichaelK\Documents\GitHub\Little-WItch-Nobeta-Save-Editor\obj\Release\LWNobeta Save Edit.pdb
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\bin\Release\LWNobeta Save Edit.exe.config
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\bin\Release\LWNobeta Save Edit.exe
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\bin\Release\LWNobeta Save Edit.pdb
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\obj\Release\LWNobeta Save Edit.csproj.AssemblyReference.cache
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\obj\Release\LWNobeta Save Edit.csproj.SuggestedBindingRedirects.cache
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\obj\Release\LWNobeta_Save_Edit.Form1.resources
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\obj\Release\LWNobeta_Save_Edit.Form2.resources
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\obj\Release\LWNobeta_Save_Edit.Form3.resources
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\obj\Release\LWNobeta_Save_Edit.Properties.Resources.resources
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\obj\Release\LWNobeta Save Edit.csproj.GenerateResource.cache
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\obj\Release\LWNobeta Save Edit.csproj.CoreCompileInputs.cache
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\obj\Release\LWNobeta Save Edit.exe
+E:\share\Repositories\Little-WItch-Nobeta-Save-Editor\obj\Release\LWNobeta Save Edit.pdb
